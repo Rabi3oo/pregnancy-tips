@@ -160,21 +160,4 @@ document.getElementById("btn-copy-tip").addEventListener("click", async () => {
 });
 btnReset.addEventListener("click", () => { localStorage.removeItem("preg_data"); state={mode:"start", startDateStr:"", weekInput:""}; saveState(); applyStateToUI(); elTipText.style.display="none"; elTipPlaceholder.style.display=""; btnCopyTip.disabled=true; });
 
-
-const btnWhatsApp = document.getElementById("btn-whatsapp");
-
-btnWhatsApp.addEventListener("click", () => {
-  if (elTipText.style.display === "none" || !elTipText.textContent.trim()) {
-    alert("اعرضي النصيحة أولًا بالضغط على زر 'إظهار نصيحة اليوم'.");
-    return;
-  }
-  const siteName = "جمل تحفيزية يومية للحامل";
-  const link = window.location.href;
-  const text = `${elTipText.textContent}\n\n— من موقع “${siteName}”\n${link}`;
-  const encoded = encodeURIComponent(text);
-  const whatsappUrl = `https://wa.me/?text=${encoded}`;
-  window.open(whatsappUrl, "_blank");
-});
-
-
 document.addEventListener("DOMContentLoaded", applyStateToUI);
