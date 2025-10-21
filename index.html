@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>نصائح الحمل اليومية</title>
+  <title>جمل تحفيزية يومية للحامل</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
     <header class="site-header">
-      <h1>نصائح الحمل اليومية</h1>
-      <p class="subtitle">موقع عربي مجاني يعرض نصيحة لكل يوم من أيام الحمل (حتى 280 يومًا)، مع حفظ بياناتك محليًا لزياراتك القادمة.</p>
+      <h1>جمل تحفيزية يومية للحامل</h1>
+      <p class="subtitle">موقع عربي مجاني يعرض جملة/دعاء/نصيحة لكل يوم من أيام الحمل (حتى 280 يومًا)، مع حفظ بياناتك محليًا لزياراتك القادمة.</p>
     </header>
 
     <section class="card today">
@@ -32,7 +32,7 @@
       <div id="mode-start" class="mode-pane">
         <label class="muted small">اختاري تاريخ بداية حملك (غالبًا من أول يوم لآخر دورة):</label>
         <input type="date" id="start-date" class="field" />
-        <p id="start-saved" class="help muted small" style="display:none;">تم الحفظ. يمكنك العودة لاحقًا وسيتم التعرّف عليك تلقائيًا.</p>
+        <p id="start-saved" class="help muted small" style="display:none;">تم الحفظ. في الزيارات القادمة يكفي الضغط على زر "إظهار نصيحة اليوم".</p>
       </div>
 
       <div id="mode-week" class="mode-pane" style="display:none;">
@@ -64,13 +64,13 @@
 
       <div class="tip-box">
         <div class="muted small">نصيحة اليوم</div>
-        <p id="tip-text" class="tip-text">من فضلك أدخلي تاريخ بداية الحمل أو الأسبوع الحالي لعرض نصيحة اليوم.</p>
-        <p id="note" class="note muted small" style="display:none;">* ملاحظة: هذه النسخة الأولية تتضمّن نصائح افتراضية. يمكنك لاحقًا استبدالها بنصائح مخصّصة لكل يوم.</p>
+        <p id="tip-text" class="tip-text" style="display:none;"></p>
+        <p id="tip-placeholder" class="muted">اضغطي زر "إظهار نصيحة اليوم" لعرض النص.</p>
       </div>
 
       <div class="row gap actions">
-        <button id="btn-copy" class="btn">نسخ رابط الموقع</button>
-        <button id="btn-top" class="btn secondary">الرجوع للأعلى</button>
+        <button id="btn-show" class="btn primary">إظهار نصيحة اليوم</button>
+        <button id="btn-copy-tip" class="btn secondary" disabled>نسخ النصيحة</button>
       </div>
     </section>
 
