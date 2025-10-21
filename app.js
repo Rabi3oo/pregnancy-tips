@@ -29,6 +29,31 @@ function parseDateInput(el) {
   m = v.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/); if (m) return new Date(+m[3],+m[1]-1,+m[2]);
   return null;
 }
+const POEMS = [
+  [
+    "أنا أعطيتُ هذا الليل أسمائي وهاجَرَ بِي",
+    "جَعلتُ نُجومَهُ كُتُباً رَسَمْتُكِ نَجمةَ الكُتُبِ"
+  ],
+  [
+    "تُضيءُ عيونُكِ ليلَ القصيدِ،",
+    "فتزهرُ في القلبِ ألفُ النشيدِ."
+  ],
+  [
+    "هُنا يبدأ الحُلمُ.. لا ينتهي،",
+    "وتسكنُ نجمةُ عُمري هناك."
+  ],
+  [
+    "كأنكِ فجرٌ على غيمةٍ،",
+    "وأنا قطرةٌ في سماكِ العذبِ."
+  ]
+];
+
+function setRandomPoem() {
+  const el = document.querySelector(".poem-top");
+  if (!el) return;
+  const poem = POEMS[Math.floor(Math.random() * POEMS.length)];
+  el.innerHTML = poem.map(line => `<div>${line}</div>`).join("");
+}
 
 // === TIPS ARRAY ===
 const TIPS = (() => {
@@ -426,4 +451,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (d) { state.startDateStr = ymd(d); save(); }
   }
   computeOnly();
+  setRandomPoem();
 });
